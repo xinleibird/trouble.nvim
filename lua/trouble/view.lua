@@ -363,8 +363,7 @@ function View.create(opts)
   else
     if config.options.position == "top" then
       vim.cmd("aboveleft new")
-    end
-    if config.options.position == "bottom" then
+    else
       vim.cmd("belowright new")
     end
   end
