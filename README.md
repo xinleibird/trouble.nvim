@@ -56,9 +56,8 @@ Trouble comes with the following defaults:
 
 ```lua
 {
-    position = "bottom", -- position of the list can be: bottom, top, left, right
+    position = "bottom", -- position of the list can be: "bottom" or "top"
     height = 10, -- height of the trouble list when position is top or bottom
-    width = 50, -- width of the list when position is left or right
     icons = true, -- use devicons for filenames
     mode = "workspace_diagnostics", -- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
     severity = nil, -- nil (ALL) or vim.diagnostic.severity.ERROR | WARN | INFO | HINT
@@ -88,8 +87,8 @@ Trouble comes with the following defaults:
         open_folds = {"zR", "zr"}, -- open all folds
         toggle_fold = {"zA", "za"}, -- toggle fold of current file
         previous = "k", -- previous item
-        next = "j" -- next item
-        help = "?" -- help menu
+        next = "j", -- next item
+        help = "?", -- help menu
     },
     multiline = true, -- render multi-line messages
     indent_lines = true, -- add an indent guide below the fold icons

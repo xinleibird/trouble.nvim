@@ -174,11 +174,7 @@ function View:setup(opts)
     end
   end
 
-  if config.options.position == "top" or config.options.position == "bottom" then
-    vim.api.nvim_win_set_height(self.win, config.options.height)
-  else
-    vim.api.nvim_win_set_width(self.win, config.options.width)
-  end
+  vim.api.nvim_win_set_height(self.win, config.options.height)
 
   self:set_option("filetype", "Trouble")
 
@@ -366,8 +362,12 @@ function View.create(opts)
     vim.cmd("enew")
   else
     vim.cmd("below new")
-    local pos = { bottom = "J", top = "K", left = "H", right = "L" }
-    vim.cmd("wincmd " .. (pos[config.options.position] or "K"))
+    if config.options.position == "top" then
+      vim.cmd("belowright new")
+    end
+    if config.options.position == "bottom" then
+      vim.cmd("aboveleft new")
+    end
   end
   local buffer = View:new(opts)
   buffer:setup(opts)
