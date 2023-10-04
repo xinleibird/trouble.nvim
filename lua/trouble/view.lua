@@ -361,7 +361,6 @@ function View.create(opts)
     View.switch_to(opts.win)
     vim.cmd("enew")
   else
-    vim.cmd("below new")
     if config.options.position == "top" then
       vim.cmd("aboveleft new")
     end
