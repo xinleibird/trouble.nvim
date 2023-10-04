@@ -363,10 +363,10 @@ function View.create(opts)
   else
     vim.cmd("below new")
     if config.options.position == "top" then
-      vim.cmd("belowright new")
+      vim.cmd("aboveleft new")
     end
     if config.options.position == "bottom" then
-      vim.cmd("aboveleft new")
+      vim.cmd("belowright new")
     end
   end
   local buffer = View:new(opts)
